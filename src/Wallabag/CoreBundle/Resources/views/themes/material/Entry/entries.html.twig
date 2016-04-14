@@ -115,6 +115,7 @@
     </div>
 
     <!-- Filters -->
+    {% if form is not null %}
     <div id="filters" class="side-nav fixed right-aligned">
         <form action="{{ path('all') }}">
 
@@ -193,4 +194,5 @@
 
         </form>
     </div>
+    {% endif %}
 {% endblock %}
