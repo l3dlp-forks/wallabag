@@ -32,6 +32,7 @@
   ],
   "dependencies": {
     "icomoon-bower": "icomoon#^0.1.0",
-    "bower-pt-sans": "pt-sans#*"
+    "bower-pt-sans": "pt-sans#*",
+    "roboto-fontface": "^0.4.5"
   }
 }

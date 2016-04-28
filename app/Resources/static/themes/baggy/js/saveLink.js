@@ -36,23 +36,6 @@ $.fn.ready(function() {
     $('#plainurl').focus();
   }
 
-	//---------------------------------------------------------------------------
-	// These two functions are now taken care of in popupForm.js
-	//---------------------------------------------------------------------------
-
-  // $bagit.click(function(){
-  //   $bagit.toggleClass("current");
-  //   $("#bagit-arrow").toggleClass("arrow-down");
-  //   toggleSaveLinkForm();
-  // });
-
-  // $("#bagit-form-close").click(function(){
-  //   $bagit.removeClass("current");
-  //   $("#bagit-arrow").removeClass("arrow-down");
-  //   toggleSaveLinkForm();
-  // });
-
-
   //send "bag it link" form request via ajax
   $bagitFormForm.submit( function(event) {
     $("body").css("cursor", "wait");
@@ -67,7 +50,6 @@ $.fn.ready(function() {
         $('#plainurl').val('');
         $('#plainurl').blur('');
         $("body").css("cursor", "auto");
-        //setTimeout( function() { toggleSaveLinkForm(); }, 1000); //close form after 1000 delay
       },
       error: function(data) {
         $('#add-link-result').html("Failed!");

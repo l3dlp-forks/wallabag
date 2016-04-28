@@ -132,7 +132,7 @@ module.exports = function (grunt) {
             overwrite: true,
             cwd: "<%= appDir %>/lib/bower-pt-sans/fonts",
             src: "*",
-            dest: "<%= buildDir %>/themes/baggy/fonts"
+            dest: "<%= buildDir %>/themes/baggy/fonts/"
           }
         ]
       },
@@ -151,6 +151,13 @@ module.exports = function (grunt) {
             cwd: "node_modules/materialize-css/",
             src: "font",
             dest: "<%= buildDir %>/themes/material"
+          },
+          {
+            expand: true,
+            overwrite: true,
+            cwd: "<%= appDir %>/lib/roboto-fontface/fonts/",
+            src: "*",
+            dest: "<%= buildDir %>/themes/material/fonts/roboto/"
           }
         ]
       },

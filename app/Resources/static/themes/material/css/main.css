@@ -29,6 +29,37 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(./fonts/MaterialIcons-Regular.woff2) format("woff2"), url(./fonts/MaterialIcons-Regular.woff) format("woff"), url(./fonts/MaterialIcons-Regular.ttf) format("truetype"); }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: icomoon;
@@ -53,20 +84,6 @@ body {
 
 body.login main {
   padding: 0;
-}
-
-#warning_message {
-  position: fixed;
-  background-color: #ff6347;
-  z-index: 1000;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: #000;
-}
-
-#warning_message a {
-  color: #555;
 }
 
 .border-bottom {
@@ -118,16 +135,16 @@ main,
   display: block;
 }
 
+.pagination .disabled {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
 .pagination li.active span {
     padding: 0px 10px;
     height: 30px;
     display: block;
     color: #fff;
-}
-
-.pagination .disabled {
-    margin-right: 10px;
-    margin-left: 10px;
 }
 
 .page-footer .footer-copyright p {
@@ -461,9 +478,12 @@ main ul.row {
   .indicator {
     display: none;
   }
+<<<<<<< 591f25524cb964f642be7d187ce1a8572464dc47
   .pagination li.prev, .pagination li.next {
     width: auto;
   }
+=======
+>>>>>>> rebase
 }
 
 @media only screen and (min-width: 400px) {
