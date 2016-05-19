@@ -29,17 +29,17 @@ node_js:
     - "5"
 
 env:
-    - DB=mysql TRAVIS=noassets
-    - DB=pgsql TRAVIS=noassets
-    - DB=sqlite TRAVIS=noassets
+    - DB=mysql ASSETS=nobuild
+    - DB=pgsql ASSETS=nobuild
+    - DB=sqlite ASSETS=nobuild
 
 matrix:
     fast_finish: true
     include:
         - php: 7.0
-          env: CS_FIXER=run VALIDATE_TRANSLATION_FILE=run DB=sqlite
+          env: CS_FIXER=run VALIDATE_TRANSLATION_FILE=run DB=sqlite ASSETS=nobuild
         - php: 7.0
-          env: TRAVIS=run DB=sqlite
+          env: ASSETS=build DB=sqlite
     exclude:
         - php: hhvm
           env: DB=pgsql  # driver for PostgreSQL currently unsupported by HHVM, requires 3rd party dependency
@@ -58,8 +58,8 @@ before_script:
     - if [[ "$DB" = "pgsql" ]]; then psql -c 'create database wallabag_test;' -U postgres; fi;
 
 install:
-    - source ~/.nvm/nvm.sh && nvm install 5.0
-    - npm install -g npm@latest
+    - if [[ $ASSETS != build ]]; then source ~/.nvm/nvm.sh && nvm install 5.0; fi;
+    - if [[ $ASSETS != build ]]; then npm install -g npm@latest; fi;
 
 before_install:
     - if [[ $TRAVIS_REPO_SLUG = wallabag/wallabag ]]; then cp .composer-auth.json ~/.composer/auth.json; fi;
