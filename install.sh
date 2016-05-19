@@ -8,7 +8,7 @@ else
     echo "Downloading javascript librairies through npm..."
     npm install
     echo "Downloading fonts librairies through bower..."
-    bower install -q
+    bower install
     echo "Concat, minify and installing assets..."
     grunt
 fi
