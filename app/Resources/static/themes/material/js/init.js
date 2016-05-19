@@ -64,7 +64,7 @@ $(document).ready(function(){
         $("#searchfield").focus();
         return false;
     });
-    $('.mdi-navigation-close').on('click', function(){
+    $('.close').on('click', function(){
         $(".nav-panel-add").hide(100);
         $(".nav-panel-search").hide(100);
         $(".nav-panel-buttom").show(100);

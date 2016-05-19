@@ -158,6 +158,13 @@ module.exports = function (grunt) {
             cwd: "<%= appDir %>/lib/roboto-fontface/fonts/",
             src: "*",
             dest: "<%= buildDir %>/themes/material/fonts/roboto/"
+          },
+          {
+            expand: true,
+            overwrite: true,
+            cwd: "<%= appDir %>/lib/material-design-icons/iconfont/",
+            src: "*",
+            dest: "<%= buildDir %>/themes/material/fonts/"
           }
         ]
       },

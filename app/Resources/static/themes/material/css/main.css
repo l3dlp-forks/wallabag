@@ -33,14 +33,18 @@
   font-family: 'Material Icons';
   font-style: normal;
   font-weight: 400;
-  src: url(./fonts/MaterialIcons-Regular.eot);
+  src: url(../fonts/MaterialIcons-Regular.eot);
   /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(./fonts/MaterialIcons-Regular.woff2) format("woff2"), url(./fonts/MaterialIcons-Regular.woff) format("woff"), url(./fonts/MaterialIcons-Regular.ttf) format("truetype"); }
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
   font-size: 24px;  /* Preferred icon size */
+  width: 1em;
+  height: 1em;
   display: inline-block;
   line-height: 1;
   text-transform: none;
@@ -197,9 +201,9 @@ nav input {
   transition: background 0.2s ease;
 }
 
-.nav-panel-add .mdi-content-add,
-.nav-panel-search .mdi-action-search,
-.nav-panels .mdi-navigation-close {
+.nav-panel-add .add,
+.nav-panel-search .search,
+.nav-panels .close {
   color: #444 !important;
 }
 
@@ -227,7 +231,7 @@ nav input {
   left: 1rem;
 }
 
-.input-field.nav-panel-add .mdi-navigation-close {
+.input-field.nav-panel-add .close {
   position: absolute;
   top: 0;
   right: 1rem;
@@ -253,6 +257,13 @@ nav input {
   font-size: 13px;
   line-height: 44px;
   height: 44px;
+}
+
+.side-nav .collapsible-header,
+.side-nav.fixed .collapsible-header {
+    height: 45px;
+    line-height: 44px;
+    padding: 0 20px;
 }
 
 .bold > a {
@@ -427,7 +438,7 @@ main ul.row {
 
 #article aside .link {
   color: #000;
-  font-size: 0.6em;
+  font-size: 0.8em;
   text-decoration: none;
 }
 
