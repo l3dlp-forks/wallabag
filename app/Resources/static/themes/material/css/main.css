@@ -478,12 +478,9 @@ main ul.row {
   .indicator {
     display: none;
   }
-<<<<<<< 591f25524cb964f642be7d187ce1a8572464dc47
   .pagination li.prev, .pagination li.next {
     width: auto;
   }
-=======
->>>>>>> rebase
 }
 
 @media only screen and (min-width: 400px) {

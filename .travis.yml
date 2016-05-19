@@ -29,15 +29,17 @@ node_js:
     - "5"
 
 env:
-    - DB=mysql
-    - DB=pgsql
-    - DB=sqlite
+    - DB=mysql TRAVIS=noassets
+    - DB=pgsql TRAVIS=noassets
+    - DB=sqlite TRAVIS=noassets
 
 matrix:
     fast_finish: true
     include:
         - php: 7.0
           env: CS_FIXER=run VALIDATE_TRANSLATION_FILE=run DB=sqlite
+        - php: 7.0
+          env: TRAVIS=run DB=sqlite
     exclude:
         - php: hhvm
           env: DB=pgsql  # driver for PostgreSQL currently unsupported by HHVM, requires 3rd party dependency
@@ -55,13 +57,15 @@ before_script:
     - composer self-update --no-progress
     - if [[ "$DB" = "pgsql" ]]; then psql -c 'create database wallabag_test;' -U postgres; fi;
 
-before_install:
-    - if [[ $TRAVIS_REPO_SLUG = wallabag/wallabag ]]; then cp .composer-auth.json ~/.composer/auth.json; fi;
+install:
     - source ~/.nvm/nvm.sh && nvm install 5.0
     - npm install -g npm@latest
 
+before_install:
+    - if [[ $TRAVIS_REPO_SLUG = wallabag/wallabag ]]; then cp .composer-auth.json ~/.composer/auth.json; fi;
+
 script:
-    - travis_wait composer install --no-interaction --no-progress --prefer-dist -o
+    - travis_wait ./install.sh
     - ant prepare-$DB
     - bin/phpunit -v
     - if [ "$CS_FIXER" = "run" ]; then php bin/php-cs-fixer fix src/ --verbose --dry-run ; fi;
