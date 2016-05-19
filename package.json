@@ -30,12 +30,13 @@
     "jquery-ui": "^1.10.5",
     "jquery.cookie": "^1.4.1",
     "load-grunt-tasks": "^3.4.1",
-    "materialize-css": "^0.97.5",
+    "materialize-css": "^0.97.6",
     "npm": "^3.8.3",
     "pickadate": "^3.5.6",
     "pixrem": "^3.0.0",
     "postcss-cssnext": "^2.5.1",
-    "prismjs": "^1.4.1"
+    "prismjs": "^1.4.1",
+    "through": "^2.3.8"
   },
   "engines": {
     "node": ">0.12"
