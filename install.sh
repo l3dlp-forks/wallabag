@@ -1,6 +1,8 @@
 #! /usr/bin/env bash
 
-if ["$TRAVIS" == "noassets"]; then
+set -ev
+
+if [[ $TRAVIS == 'noassets' ]]; then
     composer install --no-interaction --no-progress --prefer-dist -o
 else
     echo "Installing PHP dependencies through Composer..."
