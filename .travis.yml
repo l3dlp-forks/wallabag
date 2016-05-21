@@ -39,7 +39,7 @@ matrix:
         - php: 7.0
           env: CS_FIXER=run VALIDATE_TRANSLATION_FILE=run DB=sqlite ASSETS=nobuild
         - php: 7.0
-          env: ASSETS=build DB=sqlite
+          env: DB=sqlite ASSETS=build
     exclude:
         - php: hhvm
           env: DB=pgsql  # driver for PostgreSQL currently unsupported by HHVM, requires 3rd party dependency

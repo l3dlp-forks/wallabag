@@ -4,11 +4,18 @@ if [[ $ASSETS == 'nobuild' ]]; then
     composer install --no-interaction --no-progress --prefer-dist -o
 else
     echo "Installing PHP dependencies through Composer..."
-    composer install
+    SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist
+
     echo "Downloading javascript librairies through npm..."
-    npm install
+    vendor/mouf/nodejs-installer/bin/local/npm install
+
     echo "Downloading fonts librairies through bower..."
-    bower install
+    node_modules/bower/bin/bower install
+
     echo "Concat, minify and installing assets..."
-    grunt
+    node_modules/grunt/bin/grunt
+
+    echo "Installing wallabag..."
+    php bin/console wallabag:install --env=prod
+
 fi
