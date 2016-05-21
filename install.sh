@@ -21,7 +21,9 @@ else
     echo "Concat, minify and installing assets..."
     node_modules/grunt/bin/grunt
 
-    echo "Installing wallabag..."
-    php bin/console wallabag:install --env=prod
+    if [[ $ASSETS != 'build' ]]; then
+        echo "Installing wallabag..."
+        php bin/console wallabag:install --env=prod
+    fi
 
 fi
