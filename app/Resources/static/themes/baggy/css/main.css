@@ -83,6 +83,10 @@ a {
   font-weight: bold;
 }
 
+a.nostyle {
+    text-decoration: none;
+}
+
 a:hover,
 a:focus {
   text-decoration: none;
@@ -518,6 +522,7 @@ img.preview {
   vertical-align: top;
   letter-spacing: normal;
   width: 50%;
+  text-align: right;
 }
 
 div.pagination ul {
@@ -546,7 +551,8 @@ div.pagination ul a:focus {
   text-decoration: underline;
 }
 
-div.pagination ul .disabled {
+div.pagination ul .prev.disabled,
+div.pagination ul .next.disabled {
   display: none;
 }
 
@@ -675,6 +681,10 @@ a.add-to-wallabag-link-after::after {
   font-size: 0.9em;
 }
 
+.btn-clickable {
+    cursor: pointer;
+}
+
 /* ==========================================================================
    3 = Pictos
    ========================================================================== */
@@ -690,6 +700,47 @@ a.add-to-wallabag-link-after::after {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;  /* Preferred icon size */
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
 
 .icon span,
 .icon-image span {
@@ -986,10 +1037,38 @@ pre code {
   padding-top: 30px;
   border-left: 1px #333 solid;
   z-index: 12;
+  min-width: 300px;
 }
 
 #filter-form form .filter-group {
   margin: 5px;
+}
+
+#download-form {
+    position: fixed;
+    width: 10%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 15px;
+    padding-right: 30px;
+    padding-top: 30px;
+    border-left: 1px #333 solid;
+    z-index: 12;
+    min-width: 200px;
+}
+
+#download-form li {
+    display: block;
+    padding: .5em 2em .5em 1em;
+    color: #fff;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: PT Sans,sans-serif;
+    transition: all .5s ease;
 }
 
 /* ==========================================================================

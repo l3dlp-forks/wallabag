@@ -38,7 +38,7 @@
     </nav>
     <ul id="slide-out" class="collapsible side-nav fixed reader-mode" data-collapsible="accordion">
         <li class="bold border-bottom hide-on-med-and-down">
-            <a class="waves-effect collapsible-header waves-teal" href="{{ path('homepage') }}">
+            <a class="waves-effect collapsible-header" href="{{ path('homepage') }}">
                 <i class="material-icons small">exit_to_app</i>
                 <span>{{ 'entry.view.left_menu.back_to_homepage'|trans }}</span>
             </a>
@@ -46,7 +46,7 @@
         </li>
 
         <li class="bold border-bottom hide-on-med-and-down">
-            <a class="waves-effect collapsible-header waves-teal" href="{{ entry.url|e }}">
+            <a class="waves-effect collapsible-header" href="{{ entry.url|e }}">
                 <i class="material-icons small">link</i>
                 <span>{{ 'entry.view.left_menu.view_original_article'|trans }}</span>
             </a>

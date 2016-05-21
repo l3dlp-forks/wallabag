@@ -145,6 +145,11 @@ main,
     margin-left: 10px;
 }
 
+div.pagination ul .prev.disabled,
+div.pagination ul .next.disabled {
+  display: none;
+}
+
 .pagination li.active span {
     padding: 0px 10px;
     height: 30px;
@@ -368,10 +373,6 @@ main ul.row {
   max-width: 370px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.mdi-card-close::before {
-  content: "\e8aa";
 }
 
 .card .card-image {

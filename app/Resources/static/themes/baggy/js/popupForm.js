@@ -3,6 +3,7 @@ $(document).ready(function() {
     $("#search-form").hide();
     $("#bagit-form").hide();
     $("#filter-form").hide();
+    $("#download-form").hide();
 
     //---------------------------------------------------------------------------
     // Toggle the "Search" popup in the sidebar
@@ -24,6 +25,13 @@ $(document).ready(function() {
     //---------------------------------------------------------------------------
     function toggleFilter() {
         $("#filter-form").toggle();
+    }
+
+    //---------------------------------------------------------------------------
+    // Toggle the "Download" popup on entries list
+    //---------------------------------------------------------------------------
+    function toggleDownload() {
+        $("#download-form").toggle();
     }
 
     //---------------------------------------------------------------------------
@@ -58,9 +66,14 @@ $(document).ready(function() {
         $("#searchfield").focus();
     });
 
-    $("#filter").click(function(){
+    $(".filter-btn").click(function(){
         closePopups();
         toggleFilter();
+    });
+
+    $(".download-btn").click(function(){
+        closePopups();
+        toggleDownload();
     });
 
     $("#bagit").click(function(){
@@ -75,6 +88,10 @@ $(document).ready(function() {
 
     $("#filter-form-close").click(function(){
         toggleFilter();
+    });
+
+    $("#download-form-close").click(function(){
+        toggleDownload();
     });
 
     $("#bagit-form-close").click(function(){
